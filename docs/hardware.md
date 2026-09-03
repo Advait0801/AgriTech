@@ -72,6 +72,22 @@ Readings were published to channel `2693814` via HTTP GET, one update every ~5 s
 
 **The channel has been retired** and no longer serves data.
 
+## Field validation
+
+The node was commissioned in two stages. The first run was on a **corn plot**,
+used to prove out the firmware end to end — RS485 polling against a real probe
+in real soil, the DHT11 readings, and the ThingSpeak uplink — rather than to
+collect training data. That run produced 3,053 logged readings
+([`corn.csv`](../ml/data/corn.csv)).
+
+By the time the firmware was stable the corn season had finished, so the
+production deployment moved to a **chilli plot**, which is the system documented
+here and the source of the 734 readings the yield model was trained on.
+
+Both runs used the same node and the same seven-channel schema, so the corn logs
+remain a useful reference for the sensor's behaviour across a different crop and
+soil condition.
+
 ## Known hardware limitations
 
 - **Soil temperature was derived, not measured.** The firmware computes it as `air_temperature − 5 °C`. The probe exposes a temperature register, but it was not wired into the polling loop. Every soil-temperature value in the dataset and in the yield model's input carries this approximation.

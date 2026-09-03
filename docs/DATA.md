@@ -29,8 +29,15 @@ In [`ml/data/`](../ml/data/):
 |---|---|---|
 | `all_crops_data.csv` | 2,934 | Crop recommendation training set — N, P, K, temperature, humidity, label (23 crops) |
 | `Crop_recommendation.csv` | 2,200 | Public source dataset, 22 crops, additionally carries pH and rainfall |
-| `chilli_data.xlsx` | 734 | Sensor logs from the deployed node — the yield model's inputs |
-| `corn.csv` | 3,052 | Sensor logs in the same seven-channel schema |
+| `chilli_data.xlsx` | 734 | Sensor logs from the chilli deployment — the yield model's inputs |
+| `corn.csv` | 3,053 | Sensor logs from the earlier firmware-validation run on a corn crop |
+
+`corn.csv` is not training data. It comes from the first field run, made on a
+corn plot to confirm that the firmware, the RS485 polling loop and the
+ThingSpeak uplink worked against a real crop. By the time the node was reliable
+the corn season had ended, so the production deployment moved to chilli and
+`chilli_data.xlsx` became the yield model's input. Both files share the same
+seven-channel schema, which is what makes them directly comparable.
 
 The dataset used by the survey-paper notebook (`crop yield data sheet.xlsx`) is a
 third-party sample cited in the paper and is not included here.
