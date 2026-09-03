@@ -1,0 +1,16 @@
+# Python 3.12
+#
+# scikit-learn is pinned exactly: the committed models in ../models/ were
+# pickled with 1.6.1 and will not unpickle reliably on another version.
+
+flask==3.1.0
+flask-cors==5.0.0
+numpy==2.2.0
+scikit-learn==1.6.1
+pillow==11.1.0
+
+# Disease detection only. Requires disease_model.pth (343 MB), which is
+# distributed via Google Drive rather than committed — see docs/DATA.md.
+torch==2.6.0
+torchvision==0.21.0
+transformers==4.48.0
