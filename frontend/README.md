@@ -15,13 +15,20 @@ npm run start-react     # http://localhost:3000
 
 ## Configuration
 
-The API base URL comes from `src/API/config.js` and can be overridden at build time:
+Copy `.env.example` to `.env` and fill in the values:
 
 ```bash
-REACT_APP_API_URL=http://localhost:5001 npm run build
+cp .env.example .env
 ```
 
-Firebase configuration lives in `src/firebase.js`. Those values are public by design — they identify the project and ship in every client bundle. Access is controlled by Firestore security rules and the authorized-domains list.
+| Variable | Purpose |
+|---|---|
+| `REACT_APP_API_URL` | Flask API base URL (defaults to `http://127.0.0.1:5001`) |
+| `REACT_APP_FIREBASE_*` | Firebase project configuration |
+
+The Firebase project used during development belonged to a team member and has been decommissioned, so you will need your own to run authentication and the profile page. Everything else — including the recorded-data visualisation — works without it.
+
+Firebase web config is inlined into the client bundle at build time and is therefore public once deployed. That is normal and unavoidable for any browser SDK; a Firebase project is secured by Firestore rules, the authorized-domains list and API key restrictions, not by hiding the config. Keeping it in `.env` avoids committing it to git history, where it could not be removed without rewriting published commits.
 
 ## Structure
 
