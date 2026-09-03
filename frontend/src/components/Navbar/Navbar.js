@@ -76,11 +76,6 @@ const Navbar = () => {
                 Services
               </Link>
             </li>
-            <li>
-              <Link to="/contact" className="hover:text-primary duration-200">
-                Contact
-              </Link>
-            </li>
           </ul>
         </div>
 
@@ -140,11 +135,6 @@ const Navbar = () => {
             <li>
               <Link to="/services" onClick={() => setOpen(false)}>
                 Services
-              </Link>
-            </li>
-            <li>
-              <Link to="/contact" onClick={() => setOpen(false)}>
-                Contact
               </Link>
             </li>
             {isLoggedIn ? (

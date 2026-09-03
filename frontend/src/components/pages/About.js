@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGlobe, FaLightbulb, FaEnvelope } from "react-icons/fa";
+import { FaGlobe, FaLightbulb } from "react-icons/fa";
 import { motion } from "framer-motion";
 import about1 from "../../Images/about1.JPG";
 import about2 from "../../Images/about2.JPG";
@@ -63,19 +63,6 @@ const AboutUs = () => {
         </motion.div>
       </div>
 
-      {/* Contact Section */}
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }} 
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
-        className="mt-12 bg-white p-6 rounded-lg shadow-lg max-w-4xl w-full text-center hover:shadow-2xl transform transition-all duration-300 hover:scale-105"
-      >
-        <h2 className="text-3xl font-bold text-primary">Get in Touch</h2>
-        <p className="text-gray-700 mt-2">Have questions? Want to collaborate? Reach out to us!</p>
-        <p className="text-lg font-semibold text-primary mt-2 flex justify-center items-center gap-2">
-          <FaEnvelope /> ad.naik@gmail.com
-        </p>
-      </motion.div>
     </div>
   );
 };

@@ -32,20 +32,15 @@ const Footer = () => {
             <Link to="/services" className="hover:text-primary transition duration-300">
               Services
             </Link>
-            <Link to="/contact" className="hover:text-primary transition duration-300">
-              Contact
-            </Link>
           </div>
         </div>
 
-        {/* Contact Info - Right Aligned */}
+        {/* Institution and social links */}
         <div className="md:text-right">
-          <h3 className="text-lg font-semibold text-primary">Contact Us</h3>
+          <h3 className="text-lg font-semibold text-primary">Project</h3>
           <p className="text-gray-400">Pune Institute of Computer Technology</p>
-          <p className="text-gray-400">Email: ad.naik0801@gmail.com</p>
-          <p className="text-gray-400">Phone: +91 989 064 0373</p>
+          <p className="text-gray-400">B.E. Computer Engineering, 2024&ndash;25</p>
 
-          {/* Social Media Icons */}
           <div className="flex justify-center md:justify-end gap-4 mt-3">
             <span className="text-gray-400 text-2xl">
               <FaFacebook />

@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/pages/Home"
 import About from "./components/pages/About";
 import Services from "./components/pages/Services";
-import Contact from "./components/pages/Contact";
 import Footer from "./components/Footer/Footer";
 import Login from "./components/pages/Login";
 import Signup from "./components/pages/Signup";
@@ -26,7 +25,6 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/Login" element={<Login />} />
             <Route path="/Signup" element={<Signup />} />
             <Route path="/Yieldprediction" element={<Yieldprediction />} />

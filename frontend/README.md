@@ -42,7 +42,7 @@ src/
 | Route | Page |
 |---|---|
 | `/` | Home |
-| `/about`, `/services`, `/contact` | Static content |
+| `/about`, `/services` | Static content |
 | `/Login`, `/Signup`, `/Profile` | Firebase authentication |
 | `/Yieldprediction` | Yield prediction form |
 | `/CropRecommendation` | Crop recommendation form |
