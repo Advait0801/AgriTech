@@ -116,8 +116,16 @@ Disease detection needs `disease_model.pth` (343 MB) in `models/` — see **[doc
 
 ## Team
 
-**Advait Naik** ([@Advait0801](https://github.com/Advait0801)) · **Kaustubh Netke** · **Rhea Shah** · **Vineet Kothari**
-B.E. Computer Engineering, Pune Institute of Computer Technology — guided by Dr. S. S. Sonawane.
+B.E. Computer Engineering, Pune Institute of Computer Technology, 2024–25 — guided by Dr. S. S. Sonawane.
+
+| | |
+|---|---|
+| **Advait Naik** ([@Advait0801](https://github.com/Advait0801)) | Machine learning models, Flask API, documentation |
+| **Kaustubh Netke** | React frontend |
+| **Rhea Shah** | Hardware, field deployment |
+| **Vineet Kothari** | Hardware, field deployment |
+
+The sensor node — assembly, enclosure, solar setup and field commissioning — was built by all four of us, as were the project report and the survey paper.
 
 ## License
 
