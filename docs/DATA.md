@@ -32,6 +32,9 @@ In [`ml/data/`](../ml/data/):
 | `chilli_data.xlsx` | 734 | Sensor logs from the deployed node — the yield model's inputs |
 | `corn.csv` | 3,052 | Sensor logs in the same seven-channel schema |
 
+The dataset used by the survey-paper notebook (`crop yield data sheet.xlsx`) is a
+third-party sample cited in the paper and is not included here.
+
 `all_crops_data.csv` is `Crop_recommendation.csv` reduced to the five features the hardware could measure, with 734 rows of our own chilli readings appended. That append is the source of the class imbalance noted in [models.md](models.md#limitations).
 
 ## Committed models

@@ -20,7 +20,7 @@
 
 A sensor node built, deployed and left running in a working chilli field: a 7-in-1 soil probe and DHT11 on an ESP32, powered entirely by a 10 W solar panel, streaming nutrient and climate readings to the cloud. Three models turn those readings into decisions, served through a Flask API and a React frontend.
 
-> **Archived** — built 2024–25 at Pune Institute of Computer Technology. Hardware decommissioned; documented here rather than maintained.
+> **Archived** — built 2024–25 at Pune Institute of Computer Technology. Hardware decommissioned; documented here rather than maintained. The system itself was never published; the team's [survey paper](report/Precision_Agriculture_Survey_Paper.pdf) is a separate review of precision-agriculture techniques.
 
 ## Results
 
@@ -112,7 +112,7 @@ Disease detection needs `disease_model.pth` (343 MB) in `models/` — see **[doc
 | [API](docs/api.md) | Endpoint reference |
 | [Data](docs/DATA.md) | Large asset downloads |
 | [Project report](report/BE_Project_Report.pdf) | Full 27-page report (PDF) |
-| [Survey paper](report/Precision_Agriculture_Survey_Paper.pdf) | *Precision Agriculture: A Survey of Techniques* (PDF) |
+| [Survey paper](report/Precision_Agriculture_Survey_Paper.pdf) | *Precision Agriculture: A Survey of Techniques* — a separate review by the same team (PDF) |
 
 ## Team
 

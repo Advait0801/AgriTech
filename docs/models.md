@@ -2,6 +2,12 @@
 
 Three models, trained independently and served from a single Flask API. All training code is in [`ml/notebooks/`](../ml/notebooks/); datasets are in [`ml/data/`](../ml/data/).
 
+> **Scope.** The results below describe the system in this repository, which was
+> never published. The team's [survey paper](../report/Precision_Agriculture_Survey_Paper.pdf)
+> is a separate review of precision-agriculture techniques; its own yield
+> benchmark uses a different, third-party dataset and lives in
+> [`ml/notebooks/survey-paper/`](../ml/notebooks/survey-paper/).
+
 | Module | Model | Metric | Training data |
 |---|---|---|---|
 | Crop recommendation | Random Forest (100 trees) | 96.42% accuracy | 2,934 rows, 23 crops |
