@@ -122,10 +122,10 @@ B.E. Computer Engineering, Pune Institute of Computer Technology, 2024–25 — 
 |---|---|
 | **Advait Naik** ([@Advait0801](https://github.com/Advait0801)) | Machine learning models, Flask API, documentation |
 | **Kaustubh Netke** | React frontend |
-| **Rhea Shah** | Hardware, field deployment |
-| **Vineet Kothari** | Hardware, field deployment |
+| **Vineet Kothari** | Hardware and field deployment |
+| **Rhea Shah** | Project report and survey paper |
 
-The sensor node — assembly, enclosure, solar setup and field commissioning — was built by all four of us, as were the project report and the survey paper.
+The sensor node — assembly, enclosure, solar setup and field commissioning — was built by Advait, Kaustubh and Vineet. The project report and the survey paper were written by all four of us.
 
 ## License
 
