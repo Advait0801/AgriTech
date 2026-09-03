@@ -1,28 +1,52 @@
-from flask import Flask, request, jsonify
+"""Flask inference API for the AgriTech precision-agriculture system.
+
+Serves the three trained models behind a small JSON API consumed by the
+React frontend:
+
+    POST /predict_yield    KNN regressor      -> chilli yield (kg/acre)
+    POST /predict_crop     Random Forest      -> top-3 crops with confidence
+    POST /predict_disease  Vision Transformer -> one of five leaf classes
+
+Model artefacts live in ../models/. The two scikit-learn pickles are
+committed; disease_model.pth is 343 MB and is distributed via Google
+Drive instead (see docs/DATA.md).
+
+Note: this project is archived. The hardware has been decommissioned and
+the ThingSpeak channel retired, so the service is documented here rather
+than actively maintained.
+"""
+
+from pathlib import Path
 import pickle
+
 import numpy as np
+import torch
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 from PIL import Image
-import torch
 from torchvision import transforms
 from transformers import ViTForImageClassification
 
 app = Flask(__name__)
 CORS(app)
 
-# Load trained ML models and scalers
-with open("yield_model.pkl", "rb") as f:
-    yield_model, yield_scaler = pickle.load(f)  # Unpacking yield model and scaler
+MODEL_DIR = Path(__file__).resolve().parent.parent / "models"
 
-with open("recommendation_model.pkl", "rb") as f:
-    crop_model = pickle.load(f)  # Loading crop recommendation model
+# Trained with scikit-learn 1.6.1; unpickling requires a matching version.
+with open(MODEL_DIR / "yield_model.pkl", "rb") as f:
+    yield_model, yield_scaler = pickle.load(f)  # (KNeighborsRegressor, StandardScaler)
+
+with open(MODEL_DIR / "recommendation_model.pkl", "rb") as f:
+    crop_model = pickle.load(f)  # RandomForestClassifier
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 disease_model = ViTForImageClassification.from_pretrained(
-    'google/vit-base-patch16-224-in21k', 
+    'google/vit-base-patch16-224-in21k',
     num_labels=5
 )
-disease_model.load_state_dict(torch.load('disease_model.pth', map_location=device))
+disease_model.load_state_dict(
+    torch.load(MODEL_DIR / "disease_model.pth", map_location=device)
+)
 disease_model.to(device)
 disease_model.eval()
 
@@ -104,6 +128,4 @@ def predict_crop():
         return jsonify({"error": str(e)}), 400
 
 if __name__ == "__main__":
-    app.run(port=5001, debug=True)
-
-# lets deployyyy
+    app.run(port=5001)
