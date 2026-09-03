@@ -7,11 +7,17 @@ import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+// Firebase web configuration.
+//
+// These values are public by design: they identify the project and ship in
+// every client bundle. Access is controlled by Firestore security rules and
+// the authorized-domains list, not by keeping this config secret.
+//
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyC8I_0iG56O9XzcUdV2i7-zDcimQ7ktu84",
-  authDomain: window.location.hostname,
+  authDomain: "agritech-c7e39.firebaseapp.com",
   projectId: "agritech-c7e39",
   storageBucket: "agritech-c7e39.firebasestorage.app",
   messagingSenderId: "561647456016",

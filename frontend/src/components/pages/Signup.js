@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { GiFarmer } from "react-icons/gi";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth, db } from "../../firebase"; // Ensure firebase is configured
-import { collection, addDoc } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore"; // Import Firestore methods
 
 const Signup = () => {

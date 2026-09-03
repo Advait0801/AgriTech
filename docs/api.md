@@ -6,7 +6,7 @@ Flask service defined in [`backend/app.py`](../backend/app.py). Runs on port `50
 cd backend && pip install -r requirements.txt && python app.py
 ```
 
-Model files are resolved relative to the source file, at `../models/`.
+Model files are resolved relative to the source file, at `../models/`. The frontend's base URL is set in `frontend/src/API/config.js` and can be overridden with `REACT_APP_API_URL`.
 
 ---
 

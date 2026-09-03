@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGlobe, FaUsers, FaLightbulb, FaEnvelope } from "react-icons/fa";
+import { FaGlobe, FaLightbulb, FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
 import about1 from "../../Images/about1.JPG";
 import about2 from "../../Images/about2.JPG";

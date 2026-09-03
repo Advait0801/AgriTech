@@ -1,70 +1,54 @@
-# Getting Started with Create React App
+# AgriTech — frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React single-page app for the AgriTech precision-agriculture system. See the [project README](../README.md) for context.
 
-## Available Scripts
+Built with Create React App, React 19, Tailwind CSS 3, Recharts and Firebase Auth.
 
-In the project directory, you can run:
+## Running
 
-### `npm start`
+```bash
+npm install
+npm run start-react     # http://localhost:3000
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`npm start` runs the frontend and the Flask backend together via `concurrently`.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Configuration
 
-### `npm test`
+The API base URL comes from `src/API/config.js` and can be overridden at build time:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+REACT_APP_API_URL=http://localhost:5001 npm run build
+```
 
-### `npm run build`
+Firebase configuration lives in `src/firebase.js`. Those values are public by design — they identify the project and ship in every client bundle. Access is controlled by Firestore security rules and the authorized-domains list.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+src/
+├── API/          Backend client — one module per endpoint, shared config.js
+├── components/
+│   ├── Navbar/
+│   ├── Footer/
+│   └── pages/    One component per route
+├── data/         Recorded sensor readings used by the visualisation page
+├── Images/       Page imagery
+└── firebase.js   Auth and Firestore initialisation
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Routes
 
-### `npm run eject`
+| Route | Page |
+|---|---|
+| `/` | Home |
+| `/about`, `/services`, `/contact` | Static content |
+| `/Login`, `/Signup`, `/Profile` | Firebase authentication |
+| `/Yieldprediction` | Yield prediction form |
+| `/CropRecommendation` | Crop recommendation form |
+| `/DiseasePrediction` | Leaf image upload |
+| `/Visualization` | Recorded sensor charts |
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Note
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The backend and sensor hardware are retired, so prediction pages will not return results unless a local Flask server is running — see [backend](../backend/). The visualisation page ships its own recorded data and works standalone.

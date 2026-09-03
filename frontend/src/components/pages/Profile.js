@@ -26,6 +26,7 @@ const Profile = () => {
       setUser(currentUser);
     });
     return () => unsubscribe(); // Cleanup subscription
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- auth is a stable module import
   }, []);
 
   // Fetch profile data from Firestore when user is set
@@ -39,7 +40,7 @@ const Profile = () => {
             setFormData(docSnap.data()); // Populate form with user data
             setInitialData(docSnap.data()); // Store initial data for reset
           } else {
-            setFormData({ ...formData, email: user.email }); // Set email if no profile exists
+            setFormData((prev) => ({ ...prev, email: user.email })); // Set email if no profile exists
           }
         } catch (error) {
           console.error("Error fetching profile:", error);

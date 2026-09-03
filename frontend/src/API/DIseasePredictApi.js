@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const API_URL = "http://127.0.0.1:5001";
+import { API_URL } from "./config";
 
 export const predictDisease = async (image) => {
     const formData = new FormData();

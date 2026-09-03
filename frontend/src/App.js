@@ -1,18 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Pagess/Home"
-import About from "./components/Pagess/About";
-import Services from "./components/Pagess/Services";
-import Contact from "./components/Pagess/Contact";
+import Home from "./components/pages/Home"
+import About from "./components/pages/About";
+import Services from "./components/pages/Services";
+import Contact from "./components/pages/Contact";
 import Footer from "./components/Footer/Footer";
-import Login from "./components/Pagess/Login";
-import Signup from "./components/Pagess/Signup";
-import Yieldprediction from "./components/Pagess/Yieldprediction";
-import CropRecommendation from "./components/Pagess/CropRecommendation";
-import Visualization from "./components/Pagess/Visualization";
-import Profile from "./components/Pagess/Profile";
-import DiseasePrediction from "./components/Pagess/DiseasePrediction";
+import Login from "./components/pages/Login";
+import Signup from "./components/pages/Signup";
+import Yieldprediction from "./components/pages/Yieldprediction";
+import CropRecommendation from "./components/pages/CropRecommendation";
+import Visualization from "./components/pages/Visualization";
+import Profile from "./components/pages/Profile";
+import DiseasePrediction from "./components/pages/DiseasePrediction";
 
 
 const App = () => {

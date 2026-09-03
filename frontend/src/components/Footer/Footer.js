@@ -47,18 +47,18 @@ const Footer = () => {
 
           {/* Social Media Icons */}
           <div className="flex justify-center md:justify-end gap-4 mt-3">
-            <a href="#" className="text-gray-400 hover:text-primary text-2xl transition duration-300">
+            <span className="text-gray-400 text-2xl">
               <FaFacebook />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-primary text-2xl transition duration-300">
+            </span>
+            <span className="text-gray-400 text-2xl">
               <FaTwitter />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-primary text-2xl transition duration-300">
+            </span>
+            <span className="text-gray-400 text-2xl">
               <FaInstagram />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-primary text-2xl transition duration-300">
+            </span>
+            <span className="text-gray-400 text-2xl">
               <FaLinkedin />
-            </a>
+            </span>
           </div>
         </div>
       </div>

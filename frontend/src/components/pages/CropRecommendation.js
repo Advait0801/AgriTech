@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { auth } from "../../firebase";
+import { API_URL } from "../../API/config";
 import { FaSeedling, FaAppleAlt, FaCarrot } from "react-icons/fa";
 
 function CropRecommendation() {
@@ -52,7 +53,7 @@ function CropRecommendation() {
     try {
       const token = await user.getIdToken();
 
-      const response = await fetch("http://localhost:5001/predict_crop", {
+      const response = await fetch(`${API_URL}/predict_crop`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
